@@ -30,7 +30,7 @@ class Visite
     /**
      * @ORM\Column(type="date", nullable=true)
      */
-    private $datacreation;
+    private $datecreation;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -81,14 +81,14 @@ class Visite
         return $this;
     }
 
-    public function getDatacreation(): ?\DateTimeInterface
+    public function getDatecreation(): ?\DateTimeInterface
     {
-        return $this->datacreation;
+        return $this->datecreation;
     }
 
-    public function setDatacreation(?\DateTimeInterface $datacreation): self
+    public function setDatecreation(?\DateTimeInterface $datacreation): self
     {
-        $this->datacreation = $datacreation;
+        $this->datecreation = $datacreation;
 
         return $this;
     }
@@ -139,5 +139,13 @@ class Visite
         $this->tempmax = $tempmax;
 
         return $this;
+    }
+    
+    public function getDatecreationString() : string {
+        if($this->datecreation == null){
+            return "";
+        }else{
+            return $this->datecreation->format('d/m/Y');
+        }   
     }
 }
