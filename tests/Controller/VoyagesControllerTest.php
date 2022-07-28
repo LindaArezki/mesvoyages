@@ -37,7 +37,6 @@ class VoyagesControllerTest extends WebTestCase {
         $client->clickLink('Devaux');
         // récupération du résultat du clic
         $response = $client->getResponse();
-        dd($client->getRequest());
         // contrôle si le client existe
         $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
         // récupération de la route et contrôle qu'elle est correcte
